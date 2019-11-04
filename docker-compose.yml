@@ -1,0 +1,7 @@
+version: "2.1"
+
+services:
+  image:
+    build:
+      context: .
+    image: "${IMAGE_HUB:-}${IMAGE_NAME:-jacops/docker-skeleton}:${IMAGE_TAG:-latest}"

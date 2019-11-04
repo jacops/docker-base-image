@@ -1,0 +1,15 @@
+include:
+  - remote: https://raw.githubusercontent.com/jacops/gitlab-ci-templates/master/.docker-build.yml
+
+stages:
+  - build
+
+image: registry.gitlab.com/jakubigla/docker-compose-image
+
+build:
+  extends: .docker-build
+  stage: build
+  services:
+    - docker:dind
+  tags:
+    - docker
